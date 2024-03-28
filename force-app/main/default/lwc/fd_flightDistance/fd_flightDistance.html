@@ -1,0 +1,21 @@
+<template>
+    <lightning-spinner lwc:if={isPageLoading} alternative-text="Loading" size="large"></lightning-spinner>
+    <!-- since Flow' standard lookup doesn't work as expected we use record-picker -->
+    <lightning-layout>
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-record-picker onready={handlePickerReady} label="Departure Airport" placeholder="Enter IATA Code"
+                object-api-name="FD_Airport__c" onchange={handleDepartureChange}>
+            </lightning-record-picker>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-record-picker onready={handlePickerReady} label="Arrival Airport" placeholder="Enter IATA Code"
+                object-api-name="FD_Airport__c" onchange={handleArrivalChange}>
+            </lightning-record-picker>
+        </lightning-layout-item>
+    </lightning-layout>
+    <lightning-tile lwc:if={hasDistance} label="Distance" type="media" href="javascript:void(0)"
+        class="slds-m-around_small">
+        <lightning-icon slot="media" icon-name="standard:location"></lightning-icon>
+        <p class="slds-truncate">{distanceText}</p>
+    </lightning-tile>
+</template>
