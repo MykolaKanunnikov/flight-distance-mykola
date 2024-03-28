@@ -29,5 +29,5 @@ To get started with the Flight Distance project, follow these initial steps:
     ```
 
 6. **Use**:
-    Navigate to `Flight Distance` app via App Launcher and a create new Flight
+    Navigate to `Flight Distance` app via App Launcher and create a new Flight
 
